@@ -1,7 +1,7 @@
 Summary:	Utility library for the Xfce desktop environment
 Name:		libxfce4util
 Version:	4.10.1
-Release:	1
+Release:	2
 License:	BSD, LGPL
 Group:		Libraries
 Source0:	http://archive.xfce.org/src/xfce/libxfce4util/4.10/%{name}-%{version}.tar.bz2
@@ -71,7 +71,8 @@ install -d $RPM_BUILD_ROOT%{_datadir}/xfce4/help
 install -d $RPM_BUILD_ROOT%{_libdir}/xfce4
 install -d $RPM_BUILD_ROOT%{_sysconfdir}/xdg/xfce4
 
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/{tl_PH,ur_PK}
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/{tl_PH,ur_PK}
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %find_lang %{name}
 
